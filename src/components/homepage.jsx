@@ -181,7 +181,7 @@ const HomePage = () => {
           </form>
         </div>
         <table className="table mb-4 table-bordered">
-          <thead>
+        <thead>
             <tr>
               <th scope="col">Duration</th>
               {employeeArr.map((ele, index) => {
@@ -208,11 +208,10 @@ const HomePage = () => {
                             <p className="text-primary">{cardValue.date}</p>
                           <h5 class="card-title">{cardValue.employee}</h5>
                           <p class="card-subtitle mb-2 text-muted">
-                            Bridal MakeUp, Hair Color
+                            {ele.description}
                           </p>
-                          <h6 class="card-text">AED 12000</h6>
-                          <p>In house Appointment</p>
-                          
+                          <h6 class="card-text">{ele.aed}</h6>
+                          <p>{ele.appointment}</p>
                         </div>
                       </div>
                     </td>
