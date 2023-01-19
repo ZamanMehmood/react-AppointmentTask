@@ -1,7 +1,7 @@
  import { FORM_DATA } from "./actionType";
 
 export const listCardData = () => async(dispatch) => {
-  console.log("running =======>");
+  console.log("action function running =======>");
 
   let data = localStorage.getItem("formValues");
    const newData = JSON.parse(data)

@@ -22,6 +22,7 @@ export const employeeArr= [
       Image:
         "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
       Id: 3,
+      startTime: "10:00pm",
       price: 60,
       discountPrice: 100,
     },
@@ -30,6 +31,7 @@ export const employeeArr= [
       Image:
         "https://images.unsplash.com/photo-1664478546384-d57ffe74a78c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
       Id: 4,
+      startTime: "10:30pm",
       price: 80,
       discountPrice: 120,
     },
@@ -38,6 +40,7 @@ export const employeeArr= [
       Image:
         "https://images.unsplash.com/photo-1622560480654-d96214fdc887?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
       Id: 5,
+      startTime: "10:30pm",
       price: 80,
       discountPrice: 150,
     },
@@ -46,6 +49,7 @@ export const employeeArr= [
       Image:
         "https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
       Id: 6,
+      startTime: "11:00pm",
       price: 100,
       discountPrice: 190,
     },
@@ -54,6 +58,7 @@ export const employeeArr= [
         Image:
           "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1527&q=80",
         Id: 7,
+      startTime: "11:30pm",
         price: 40,
         discountPrice: 80,
       },
@@ -62,15 +67,8 @@ export const employeeArr= [
         Image:
           "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         Id: 8,
+        startTime: "12:00pm",
         price: 60,
         discountPrice: 100,
       }
-      // {
-      //   name: "Gulzar",
-      //   Image:
-      //     "https://images.unsplash.com/photo-1664478546384-d57ffe74a78c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      //   Id: 4,
-      //   price: 80,
-      //   discountPrice: 120,
-      // },
   ];

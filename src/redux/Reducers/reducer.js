@@ -1,7 +1,7 @@
 import { FORM_DATA } from "../Actions/actionType";
 
 const initialState = {
-  employee: [],
+  employee: [null],
 };
 
 const cardReducer = (state = initialState, action) => {

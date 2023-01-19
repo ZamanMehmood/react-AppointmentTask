@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-// import s from './header.module.css';
+import React, { useState } from "react";
 import s from "./homepage.module.css";
-// import avatar from '../../assets/images/profile-avatar.jpg';
-import avatar from "../assets/profile-avatar.jpg";
 import { employeeArr } from "./employes";
 import TimePicker from "react-time-picker";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,17 +7,6 @@ import { listCardData } from "../redux/Actions/action";
 
 const HomePage = () => {
   const [value, onChange] = useState("10:00");
-  const [cardData, setCardData] = useState([
-    { name: "abc", employId: 1, startTime: "09:30", endTime: "10:00" },
-    { name: "sdf", employId: 2, startTime: "10:30", endTime: "11:00" },
-    // {name:'sdf',employId:3,startTime:'',endTime:''},
-    { name: "fgh", employId: 4, startTime: "09:30", endTime: "10:00" },
-    { name: "def", employId: 5, startTime: "06:30", endTime: "07:00" },
-    { name: "sdf", employId: 6, startTime: "07:30", endTime: "08:00" },
-    // {name:'sdf',employId:7,startTime:'',endTime:''},
-    // {name:'sdf',employId:8,startTime:'',endTime:''},
-  ]);
-
   const disptach = useDispatch();
 
   const cardValue = useSelector((state) => state?.cardReducer?.employee);
@@ -32,8 +18,7 @@ const HomePage = () => {
     date: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
-  //   console.log("employeee array", employeeArr);
-
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(formValues);
@@ -56,7 +41,7 @@ const HomePage = () => {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h4 className="modal-title">Eployeee PopUp</h4>
+                <h4 className="modal-title">Employeee PopUp</h4>
                 <button
                   type="button"
                   className="btn-close"
@@ -113,8 +98,6 @@ const HomePage = () => {
                       className={`  ${s.timePicker}`}
                     />
                   </div>
-                  {/* <button className="btn btn-primary" type="submit">Submit</button> */}
-
                   <div className="modal-footer">
                     <button
                       type="button"
@@ -123,93 +106,22 @@ const HomePage = () => {
                     >
                       Close
                     </button>
-                    {/* <a href="../pages/homePage.html"> */}
                     <button className="btn btn-primary" type="submit">
                       Submit
                     </button>
-                    {/* </a> */}
                   </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-        {/* <div className=""> */}
         <button className={s.addBlockTimeButton}> - Add Block Time</button>
         <button className={s.appointmentButton}>
           <a data-bs-toggle="modal" data-bs-target="#myModal2">
             + New Appointment
           </a>
         </button>
-        {/* </div> */}
       </div>
-
-      {/* <div className={s.mainContainer}>
-        <div className="table-responsive bordered">
-          <div>
-            <div className={`mt-3 d-flex  justify-content-between ${s.swe}`}>
-              <div className="dropdown">
-                <button
-                  type="button"
-                  className={`btn btn-light dropdown-toggle ${s.scw}`}
-                  data-bs-toggle="dropdown"
-                >
-                  All Employee
-                </button>
-                <ul className="dropdown-menu">
-                  {employeeArr.map((ele, index) => {
-                    return (
-                      <li className="dropdown-item" key={index}>
-                        {ele.name}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div className="dropdown">
-                <button
-                  type="button"
-                  className="btn btn-light dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                >
-                  Today
-                </button>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Link 1
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Link 2
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Link 3
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <input type="date" className={s.datepicker} />
-              </div>
-              <form className="d-flex" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-              </form>
-            </div>
-          </div>
-          </div>
-          </div> */}
-
-      {/*  */}
-
       <div className="table-responsive">
         <div className={`mt-3 d-flex  justify-content-between ${s.swe}`}>
           <div className="dropdown">
@@ -283,124 +195,40 @@ const HomePage = () => {
                     <p className="fw-normal">{ele?.name}</p>
                   </th>
                 );
-                // {/* <span class="fw-normal">&lt;576px</span> */}
-              })}
+               })}
             </tr>
           </thead>
           <tbody>
-            {cardData.map((ele, ind) => {
+            {employeeArr.map((ele, ind) => {
               return (
                 <tr className={s.mw1} key={ind}>{ele.startTime}
-
-                  {/* <td className={s.carddd}>
-                    <div class="card" style={{ width: "12rem" }}>
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">
-                          Card subtitle
-                        </h6>
-                        <p class="card-text">Some the card's content.</p>
+                    <td className={s.carddd}>
+                      <div class="card" style={{ width: "12rem" }}>
+                        <div class="card-body">
+                            <p className="text-primary">{cardValue.date}</p>
+                          <h5 class="card-title">{cardValue.employee}</h5>
+                          <p class="card-subtitle mb-2 text-muted">
+                            Bridal MakeUp, Hair Color
+                          </p>
+                          <h6 class="card-text">AED 12000</h6>
+                          <p>In house Appointment</p>
+                          
+                        </div>
                       </div>
-                    </div>
-                  </td> */}
-                  <td>2</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>2</td>
+                    </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
-                
               );
             })}
-            {/* <td className={s.mw2}>
-              {employeeArr.map((item, ind) => {
-                return <td>{item.name}</td>;
-              })}
-            </td> */}
-            {/* <td>540px</td>
-              <td>720px</td>
-              <td>960px</td>
-              <td>1140px</td>
-              <td>1320px</td>
-              <td>1140px</td>
-              <td>1320px</td> */}
           </tbody>
         </table>
       </div>
-
-      {/*  */}
     </div>
-
-    //       <table className="table table-bordered">
-    //         <thead>
-    //           <tr>
-    //             <th>Duration</th>
-    //             {employeeArr.map((ele, index) => {
-    //               return (
-    //                 <>
-    //                   <th key={index}>
-    //                     <img
-    //                       src={ele?.Image}
-    //                       className={`rounded-circle ${s.avatarSize}`}
-    //                       alt="Avatar"
-    //                     />
-    //                     <p>{ele?.name}</p>
-    //                   </th>
-    //                   {cardData.map((item, index) => {
-    //                     return ele.Id == item.employId ? (
-    //                       <td className={s.tableCard}>
-    //                         <div class="container-fluid">
-    //                           <div class="row justify-content-center">
-    //                             <div class={`col-auto mb-3 ${s.columStyle}`}>
-    //                               <div className={`card ${s.cardStyle}`}>
-    //                                 <div
-    //                                   className={`card-body ${s.cardBodyStyle}`}
-    //                                 >
-    //                                   <h5 class="card-title">Card title</h5>
-    //                                   <h6 class="card-subtitle ">
-    //                                     Card subtitle
-    //                                   </h6>
-    //                                   <p class="card-text">
-    //                                     Some of the card's content.
-    //                                   </p>
-    //                                   {/* <a href="#" class="card-link">Card link</a>
-    // <a href="#" class="card-link">Another link</a> */}
-    //                                 </div>
-    //                               </div>
-    //                             </div>
-    //                           </div>
-    //                         </div>
-    //                       </td>
-    //                     ) : (
-    //                       <></>
-    //                     );
-    //                   })}
-    //                 </>
-    //               );
-    //             })}
-    //           </tr>
-    //         </thead>
-
-    //             <tbody>
-    //                 <tr className="cvcv">
-    //                   {cardData.map((el)=>{
-    //                     return  <td scope="col ">{el.startTime}</td>
-    //                   })}
-    //                 </tr>
-
-    //               <tr>
-    //                 {employeeArr.map((item) => {
-    //                   return <td>{item.name}</td>;
-    //                 })}
-    //               </tr>
-    //             </tbody>
-
-    //       </table>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
