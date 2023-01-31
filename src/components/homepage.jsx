@@ -29,7 +29,7 @@ const HomePage = () => {
     e.preventDefault();
     console.log("handle submit function");
     localStorage.setItem("formValues", JSON.stringify(formValues));
-    disptach(listCardData(formValues));
+    disptach(listCardData(formValues));    
   };
 
   return (
